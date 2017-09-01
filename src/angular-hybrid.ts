@@ -95,7 +95,7 @@ export const upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
   template: `<ui-view [name]="name"></ui-view>`,
   // provide a blank object as PARENT_INJECT.
   // The component will add property getters when it is constructed.
-  viewProviders: [ { provide: UIView.PARENT_INJECT, useValue: { } } ],
+  viewProviders: [ { provide: UIView.PARENT_INJECT, useFactory: getEmptyParentUIViewInject } ],
 })
 export class UIViewNgUpgrade {
   // The ui-view's name (or '$default')
@@ -147,6 +147,10 @@ export function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
 
 export function getUIRouter($injector: any) {
   return $injector.get('$uiRouter');
+}
+
+export function getEmptyParentUIViewInject() {
+  return {};
 }
 
 export function getParentUIViewInject(r: StateRegistry): ParentUIViewInject {
