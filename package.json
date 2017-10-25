@@ -1,6 +1,6 @@
 {
-  "name": "@uirouter/angular-hybrid",
-  "version": "3.1.7",
+  "name": "@vegafactor/angular-hybrid",
+  "version": "3.1.7-patch.0",
   "scripts": {
     "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles",
